@@ -17,7 +17,7 @@ def temp():
 	return re.search(r'.*temp=(.*)', tempstr).group(1).replace("'C", " °C")
 		
 def volt():
-  """in Volt"""
+	"""in Volt"""
 	voltstr = subprocess.check_output(["vcgencmd", "measure_volts"]).replace("\n", "").replace("\r", "")
 	voltstr2 = re.search(r'.*volt=(.*)V', voltstr).group(1)
 	return  str(float(voltstr2)) + " V"
